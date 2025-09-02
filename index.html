@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="لعبة التحدي — صفحة رئيسية تفاعلية مبنية باستخدام Tailwind CSS ومناسبة للنشر على الويب." />
+  <meta name="theme-color" content="#0f172a" />
+  <title>لعبة التحدي</title>
+
+  <!-- Cairo font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <!-- Tailwind CDN (مناسب للتجربة؛ في الإنتاج انقل التوليد محليًا) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // تمكين دعم RTL وتهيئة بسيطة
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { 
+        extend: {},
+      },
+      corePlugins: {
+        preflight: true,
+      }
+    }
+  </script>
+
+    
+</head>
+<body class="bg-gray-900 text-white antialiased">
+
+  <!-- ملاحظة: ضع الصورة في مجلد المشروع images/zaxo7.png قبل الرفع -->
+
+  <!-- Header ثابت -->
+  <header class="fixed w-full z-50 bg-gray-900 backdrop-blur-lg shadow-lg shadow-purple-500/50">
+  <div class="flex items-center justify-between h-20 px-6 w-full max-w-[100%]">
+
+    <!-- العنوان على اليمين -->
+    <h1 class="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-red-400">
+      لعبة التحدي
+    </h1>
+
+    <!-- القائمة على اليسار -->
+    <nav class="hidden md:flex space-x-6 rtl:space-x-reverse">
+      <a href="index.html" class="bubble-link block text-white hover:text-red-300 transition">الرئيسية</a>
+      <a href="gog.html" class="bubble-link block text-white hover:text-red-300 transition">إنشاء حساب</a>
+      <a href="login.html" class="bubble-link block text-white hover:text-red-300 transition">تسجيل الدخول</a>
+    </nav>
+
+    <!-- زر الهامبرغر للموبايل -->
+    <button id="menuBtn" aria-expanded="false" class="md:hidden text-white focus:outline-none">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+  </div>
+
+  <!-- قائمة الموبايل (مخفية افتراضياً) -->
+  <div id="menu" class="hidden md:hidden bg-gree-500/90 px-6 py-4">
+    <nav class="flex flex-col gap-3 items-center">
+      <a href="index.html" class="bubble-link w-full text-center py-2 rounded-full font-semibold text-white hover:text-red-300 transition">الرئيسية</a>
+      <a href="signup.html" class="bubble-link w-full text-center py-2 rounded-full font-semibold text-white hover:text-red-300 transition">إنشاء حساب</a>
+      <a href="login.html" class="bubble-link w-full text-center py-2 rounded-full font-semibold text-white hover:text-red-300 transition">تسجيل الدخول</a>
+    </nav>
+  </div>
+</header>
+
+
+  <main class="pt-24">
+    <!-- قسم البطل (Hero) -->
+    <section class="min-h-screen flex items-center justify-center">
+      <div class="container mx-auto px-6">
+        <!-- نغلف الصورة والنص في حاوية واحدة لتحريكها معاً -->
+        <div class="max-w-xl mx-auto text-center transform -translate-y-8 md:-translate-y-12">
+          <!-- استخدم مسار نسبي للصور: images/zaxo7.png -->
+          <img src="assets/logo-lg-WLxzaRHo.svg" alt="شعار لعبة التحدي" class="mx-auto w-150 md:w-150 rounded-2xl shadow-2xl">
+
+          <h2 class="mt-6 text-2xl md:text-3xl font-bold text-white">أهلاً بك في لعبة التحدي</h2>
+          <p class="mt-2 text-gray-300">اختبر مهاراتك، اكسب النقاط، وتحدى أصدقائك. ابدأ الآن!</p>
+
+          <div class="mt-6 flex items-center justify-center gap-4">
+            <a href="categories.html" class="px-5 py-2 rounded-full font-semibold bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow hover:scale-105 transform transition">ابدأ الآن</a>
+            <a href="#" class="px-5 py-2 rounded-full font-semibold border border-gray-600 text-gray-200 hover:bg-gray-800 transition">المزيد</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم محتوى إضافي أبيض لتجربة التباين -->
+    <section class="min-h-screen bg-white text-black flex items-center justify-center">
+      <div class="container px-6 text-center">
+        <h3 class="text-2xl font-bold">القسم الثاني</h3>
+        <p class="mt-3 text-gray-700">هنا يمكنك عرض ميزات اللعبة، لقطات، أو أي محتوى تريده.</p>
+      </div>
+    </section>
+  </main>
+
+    <footer class="py-8 text-center text-white bg-gradient-to-r from-blue-500 via-teal-400 to-green-500">
+  <!-- النص -->
+  <div class="mb-4">
+    © 2025 لعبة التحدي — كل الحقوق محفوظة
+  </div>
+
+  <!-- أيقونات التواصل الاجتماعي -->
+  <div class="flex justify-center gap-6">
+    <a href="https://facebook.com" target="_blank" class="hover:text-blue-800 transition">
+      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+        <path d="M22.675 0H1.325C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.098 2.795.142v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.674V1.326C24 .593 23.407 0 22.675 0z"/>
+      </svg>
+    </a>
+    <a href="https://twitter.com" target="_blank" class="hover:text-blue-400 transition">
+      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+        <path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 0 0-8.384 4.482C7.69 8.094 4.066 6.13 1.64 3.161c-.539.926-.849 2.004-.849 3.148 0 2.172 1.105 4.09 2.786 5.21a4.904 4.904 0 0 1-2.229-.616c-.054 2.36 1.631 4.576 4.036 5.06a4.935 4.935 0 0 1-2.224.084 4.927 4.927 0 0 0 4.604 3.417A9.867 9.867 0 0 1 0 19.54a13.94 13.94 0 0 0 7.548 2.212c9.058 0 14.01-7.513 14.01-14.01 0-.213-.005-.425-.014-.636A10.012 10.012 0 0 0 24 4.557z"/>
+      </svg>
+    </a>
+     <a href="https://instagram.com" target="_blank" class="text-white hover:text-pink-500 transition">
+  <svg class="w-6 h-6 fill-current" viewBox="0 0 512 512">
+    <path d="M349.33,69.33H162.67C109.04,69.33,69.33,109.04,69.33,162.67v186.67C69.33,402.96,109.04,442.67,162.67,442.67h186.67
+      C402.96,442.67,442.67,402.96,442.67,349.33V162.67C442.67,109.04,402.96,69.33,349.33,69.33z M256,349.33
+      c-51.96,0-94.33-42.37-94.33-94.33S204.04,160.67,256,160.67S350.33,203.04,350.33,256S307.96,349.33,256,349.33z M370.67,162.67
+      c-11.73,0-21.33-9.6-21.33-21.33s9.6-21.33,21.33-21.33s21.33,9.6,21.33,21.33S382.4,162.67,370.67,162.67z"/>
+    <circle cx="256" cy="256" r="62.67"/>
+  </svg>
+</a>
+  </div>
+</footer>
+
+ <script src="js/main.js"></script>
+</body>
+</html>

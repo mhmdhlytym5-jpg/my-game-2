@@ -1,0 +1,27 @@
+         body { font-family: 'Cairo', system-ui, sans-serif; }
+         /* تحسين تدرج الظل عند الحاجة */
+         .glass { background-color: rgba(15, 23, 42, 0.6); backdrop-filter: blur(6px); }
+ 
+         /* زر/رابط فقاعة (bubble-link) */
+        .bubble-link {
+         position: relative;
+         padding: 8px 20px;
+         border-radius: 9999px;
+         font-weight: 700;
+         transition: box-shadow 0.3s ease, background 0.3s ease, transform 0.3s ease;
+        }
+        .bubble-link:hover {
+         box-shadow: 0 0 0 4px #ec4899;
+         background: linear-gradient(90deg, #ec48991a, #f472b61a);
+         transform: scale(0.98);
+         color: #ec4899;
+         }
+
+        .bubble-link:focus {
+         box-shadow: 0 0 0 6px rgba(236, 72, 153, 0.12);
+         outline: none;
+         }
+
+        .bubble-link:focus {
+         box-shadow: 0 0 0 8px rgba(124, 58, 237, 0.18);
+         }
